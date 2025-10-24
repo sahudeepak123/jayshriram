@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>केन्द्रीय जाति - JSRC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+  :root { --primary-blue: #0a4c9a; --light-gray: #f4f7f6; --text-dark: #212529; --text-light: #555; --border-color: #e0e0e0; --success-green: #198754; --whatsapp-green: #25D366; }
+  body { font-family: 'Inter', Arial, sans-serif; background: var(--light-gray); margin: 0; padding: 0; color: var(--text-dark); }
+  .sub-header { display: flex; align-items: center; justify-content: center; background: white; color: var(--text-dark); padding: 15px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative; }
+  .back-button { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); background: var(--light-gray); color: var(--text-dark); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: background 0.2s ease; }
+  .back-button:hover { background: #e0e0e0; }
+  .sub-header h1 { font-size: 1.25rem; margin: 0; font-weight: 600; }
+  main { max-width: 600px; margin: 30px auto; padding: 0 15px; }
+  .doc-list-container { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid var(--border-color); padding: 25px; }
+  .doc-list-container h2 { text-align: center; margin-top: 0; margin-bottom: 25px; color: var(--primary-blue); font-weight: 600; }
+  .doc-list { list-style-type: none; padding-left: 0; margin: 0; }
+  .doc-list li { display: flex; align-items: center; gap: 12px; font-size: 1rem; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+  .doc-list li:last-child { border-bottom: none; }
+  .doc-list li i { color: var(--success-green); font-size: 1.2rem; }
+  .doc-list li b { color: red; margin-left: 4px; } /* Asterisk Style */
+  .whatsapp-apply-button { display: flex; align-items: center; justify-content: center; gap: 10px; background-color: var(--whatsapp-green); color: white; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; text-align: center; margin-top: 30px; transition: background-color 0.2s ease; }
+  .whatsapp-apply-button:hover { background-color: #1EAE50; }
+  .whatsapp-apply-button i { font-size: 1.3rem; }
+  footer { text-align: center; padding: 30px 15px; font-size: 0.9rem; color: var(--text-light); border-top: 1px solid var(--border-color); margin-top: 40px; }
+  .contact-details { margin-bottom: 25px; }
+  .contact-details p { font-size: 0.95rem; color: var(--text-dark); font-weight: 500; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .contact-details p i { color: var(--primary-blue); font-size: 1.1rem; }
+  .copyright-text { margin: 0; padding-top: 20px; border-top: 1px solid var(--border-color); }
+</style>
+</head>
+<body>
+<header class="sub-header">
+  <a href="index.html" class="back-button" title="वापस जाएं"><i class="bi bi-arrow-left"></i></a>
+  <h1>केन्द्रीय जाति</h1>
+</header>
+<main>
+  <div class="doc-list-container">
+    <h2>ज़रूरी दस्तावेज़ की सूची</h2>
+    <ul class="doc-list">
+      <li><i class="bi bi-check-circle-fill"></i><span>पुरानी इंग्लिश जाती</span><b>*</b></li>
+      <li><i class="bi bi-check-circle-fill"></i><span>समग्र आईडी</span><b>*</b></li>
+      <li><i class="bi bi-check-circle-fill"></i><span>निवास प्रमाण पत्र</span><b>*</b></li>
+      <li><i class="bi bi-check-circle-fill"></i><span>आय प्रमाण पत्र</span><b>*</b></li>
+      <li><i class="bi bi-check-circle-fill"></i><span>आवेदन पत्र</span><b>*</b></li>
+      <li><i class="bi bi-check-circle-fill"></i><span>100 रूप्ये का ऑनलाईन चालान</span><b>*</b></li>
+    </ul>
+    <a href="https://wa.me/918839142440?text=hii%20deepak,%20mujhe%20केन्द्रीय%20जाति%20praman%20patra%20banwana%20hai" class="whatsapp-apply-button" target="_blank">
+      <i class="bi bi-whatsapp"></i><span>WhatsApp पर अप्लाई करें</span>
+    </a>
+  </div>
+</main>
+<footer>
+  <div class="contact-details">
+    <p><i class="bi bi-telephone-fill"></i> +918839142440</p>
+    <p><i class="bi bi-geo-alt-fill"></i> Tahsheel parishad pawai,488446</p>
+  </div>
+  <p class="copyright-text">© <span id="year"></span> JSRC. All Rights Reserved.</p>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
