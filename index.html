@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DEEPAK SAHU MPONLINE SHOP | JSRC Pawai</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEEPAK SAHU MPONLINE SHOP | JSRC Pawai</title>
 
-<meta name="description" content="दीपक साहू की एम.पी.ऑनलाइन दुकान (जय श्री राम कंप्यूटर), तहसील परिषद पवई। यहाँ आय, जाति, निवास, समग्र आई.डी., आयुष्मान कार्ड और सभी प्रकार के दस्तावेज़ बनाए जाते हैं।">
+    <meta name="description" content="दीपक साहू की एम.पी.ऑनलाइन दुकान (जय श्री राम कंप्यूटर), तहसील परिषद पवई। यहाँ आय, जाति, निवास, समग्र आई.डी., आयुष्मान कार्ड और सभी प्रकार के दस्तावेज़ बनाए जाते हैं।">
+    <meta name="keywords" content="deepak sahu mponline, jay shri ram computer pawai, mponline pawai, panna mponline, aay praman patra, jaati praman patra, niwas praman patra, samagra id, ayushman card, sarkari dastavej pawai, JSRC">
+    <meta name="author" content="Deepak Sahu, JSRC Pawai">
 
-<meta name="keywords" content="deepak sahu mponline, jay shri ram computer pawai, mponline pawai, panna mponline, aay praman patra, jaati praman patra, niwas praman patra, samagra id, ayushman card, sarkari dastavej pawai, JSRC">
-
-<meta name="author" content="Deepak Sahu, JSRC Pawai">
-
-<meta property="og:title" content="DEEPAK SAHU MPONLINE SHOP - JSRC Pawai">
-<meta property="og:description" content="पवई में सभी प्रकार के सरकारी दस्तावेज़ों के लिए संपर्क करें - आय, जाति, निवास, और भी बहुत कुछ।">
-<meta property="og:image" content="Gemini_Generated_Image_ncq5cbncq5cbncq5.png"> <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <meta property="og:title" content="DEEPAK SAHU MPONLINE SHOP - JSRC Pawai">
+    <meta property="og:description" content="पवई में सभी प्रकार के सरकारी दस्तावेज़ों के लिए संपर्क करें - आय, जाति, निवास, और भी बहुत कुछ।">
+    <meta property="og:image" content="Gemini_Generated_Image_ncq5cbncq5cbncq5.png"> 
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 <style>
   :root {
@@ -34,7 +33,7 @@
     margin: 0;
     padding: 0;
     color: var(--text-dark);
-    padding-bottom: 80px; /* छोटे बटन के लिए नीचे जगह बनाई */
+    /* padding-bottom: 80px; हटा दिया गया */
   }
 
   /* ---------- HEADER ---------- */
@@ -47,6 +46,7 @@
     padding: 12px 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     flex-wrap: wrap;
+    gap: 15px; /* बच्चों के बीच गैप */
   }
 
   .header-left {
@@ -70,12 +70,47 @@
     letter-spacing: 0.4px;
     white-space: nowrap;
   }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* बटन के बीच गैप */
+  }
+
+  /* === नया फॉर्म बटन स्टाइल === */
+  .forms-header-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .forms-header-button i {
+    font-size: 1.1rem;
+  }
+
+  .forms-header-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  /* ========================== */
 
   .whatsapp-icon {
     color: white;
     font-size: 1.8rem;
     text-decoration: none;
     transition: transform 0.2s ease;
+    /* वर्टिकल अलाइनमेंट के लिए */
+    display: flex; 
+    align-items: center;
   }
 
   .whatsapp-icon:hover {
@@ -151,90 +186,8 @@
     min-width: 20px;
   }
 
-  /* ---------- FORM BUTTON & LIST STYLES ---------- */
+  /* ---------- FORM STYLES (हटा दिए गए) ---------- */
   
-  /* फॉर्म दिखाने वाला छोटा बटन (कोने में) */
-  .form-fab-button {
-    position: fixed; /* पेज पर एक जगह रुका रहेगा */
-    bottom: 25px;
-    right: 25px;
-    width: 55px;
-    height: 55px;
-    background-color: var(--primary-blue);
-    color: white;
-    border-radius: 50%; /* गोल बटन */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem; /* Icon का साइज़ */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    text-decoration: none;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    z-index: 1000; /* बाकी चीज़ों के ऊपर दिखे */
-  }
-
-  .form-fab-button:hover {
-    background-color: #083d7a;
-    transform: scale(1.05); /* हल्का सा बड़ा होगा */
-  }
-  
-  /* फॉर्म का कंटेनर, जो शुरू में छिपा रहेगा */
-  #formsContainer {
-    display: none;
-    margin-top: 40px; /* सर्विस लिस्ट से दूरी */
-  }
-  
-  .form-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .form-item {
-    display: flex;
-    justify-content: space-between; /* नाम और बटन को अलग किया */
-    align-items: center;
-    background: white;
-    border-radius: 8px;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-color);
-    color: var(--text-dark);
-  }
-
-  .form-item-name {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .form-item-name i {
-    color: var(--primary-blue);
-    font-size: 1.1rem;
-  }
-
-  .download-btn {
-    background: var(--primary-blue);
-    color: white;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.2s ease;
-  }
-
-  .download-btn:hover {
-    background-color: #083d7a;
-  }
-  /* ------------------------------------------- */
-
-
   /* ---------- FOOTER ---------- */
   footer {
     text-align: center;
@@ -287,21 +240,18 @@
     header h1 {
       font-size: 1.2rem;
     }
+    
+    .header-right {
+        margin-top: 8px;
+    }
 
     .whatsapp-icon {
       position: relative;
-      margin-top: 8px;
+      /* margin-top: 8px; हटा दिया गया */
       font-size: 1.6rem;
     }
     
-    /* छोटे बटन को मोबाइल पर थोड़ा एडजस्ट किया */
-    .form-fab-button {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
-    }
+    /* .form-fab-button (हटा दिया गया) */
   }
 
 </style>
@@ -310,17 +260,24 @@
 
 <header>
   <div class="header-left">
-    <img src="Gemini_Generated_Image_ncq5cbncq5cbncq5.png" alt="Profile">
+    <img src="Screenshot 2025-10-25 at 19.44.03.png" alt="Profile">
     <h1>JAY SHRI RAM COMPUTER</h1>
     <h6>deepak mponline pawai</h6>
   </div>
 
-  <a href="https://wa.me/918839142440?text=Hi%20Deepak" 
-     class="whatsapp-icon" 
-     target="_blank" 
-     title="Contact on WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
+  <div class="header-right">
+    <a href="forms.html" class="forms-header-button" title="उपलब्ध फॉर्म देखें">
+      <i class="bi bi-file-earmark-text-fill"></i>
+      <span>Forms</span>
+    </a>
+    
+    <a href="https://wa.me/918839142440?text=Hi%20Deepak" 
+       class="whatsapp-icon" 
+       target="_blank" 
+       title="Contact on WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
 </header>
 
 <main>
@@ -333,62 +290,7 @@
   
   <div class="service-list" id="serviceList"></div>
 
-
-  <div id="formsContainer">
-    <h2>Available Forms</h2>
-
-    <div class="form-list" id="formList">
-      
-      <div class="form-item">
-        <div class="form-item-name">
-          <i class="bi bi-file-earmark-pdf-fill"></i>
-          <span> आय फॉर्म (Form)</span>
-        </div>
-        <a href="aay.pdf" class="download-btn" download>
-          <i class="bi bi-download"></i>
-          Download
-        </a>
-      </div>
-
-      <div class="form-item">
-        <div class="form-item-name">
-          <i class="bi bi-file-earmark-pdf-fill"></i>
-          <span>जन्म/मृत्यु(Form)</span>
-        </div>
-        <a href="janmmrityform.html" class="download-btn" download>
-          Download
-        </a>
-      </div>
-
-      <div class="form-item">
-        <div class="form-item-name">
-          <i class="bi bi-file-earmark-pdf-fill"></i>
-          <span>विवाह पंजीयन (Form)</span>
-        </div>
-        <a href="vivahpanjiyan.pdf" class="download-btn" download>
-          <i class="bi bi-download"></i>
-          Download
-        </a>
-      </div>
-      <div class="form-item">
-        <div class="form-item-name">
-          <i class="bi bi-file-earmark-pdf-fill"></i>
-          <span>निवास फॉर्म (Form)</span>
-        </div>
-        <a href="nivas.pdf" class="download-btn" download>
-          <i class="bi bi-download"></i>
-          Download
-        </a>
-      </div>
-
-
-      </div>
-  </div>
   </main>
-
-<a class="form-fab-button" id="showFormsButton" href="#" title="उपलब्ध फॉर्म देखें">
-  <i class="bi bi-file-earmark-text-fill"></i>
-</a>
 
 <footer>
   <div class="contact-details">
@@ -427,7 +329,7 @@
     { name: "सभी प्रकार के फॉर्म उपलब्ध ", link: "contact.html" }
     
   ];
-  // ==========================
+  // ==========================<br>
 
   // (यह आपकी शॉप का JS है)
   const listContainer = document.getElementById('serviceList');
@@ -464,19 +366,8 @@
   renderList(); 
   
   // ===================================
-  // ===== Show Forms Button Script =====
+  // ===== Show Forms Button Script (हटा दिया गया) =====
   // ===================================
-  const showFormsButton = document.getElementById('showFormsButton');
-  const formsContainer = document.getElementById('formsContainer');
-
-  showFormsButton.addEventListener('click', (event) => {
-      event.preventDefault(); // पेज को ऊपर जाने से रोकता है
-      formsContainer.style.display = 'block'; // फॉर्म लिस्ट को दिखाता है
-      showFormsButton.style.display = 'none'; // बटन को छिपा देता है
-      
-      // (नया) फॉर्म लिस्ट दिखने पर पेज को वहां तक स्क्रॉल करता है
-      formsContainer.scrollIntoView({ behavior: 'smooth' });
-  });
 
 </script>
 </body>
