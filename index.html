@@ -97,7 +97,7 @@
     border-radius: 25px;
     border: 1px solid var(--border-color);
     font-size: 1rem;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Important */
     transition: border-color 0.2s, box-shadow 0.2s;
   }
 
@@ -106,6 +106,93 @@
     border-color: var(--primary-blue);
     box-shadow: 0 0 0 3px rgba(10, 76, 154, 0.1);
   }
+
+  /* ---------- (नया) AI CONTAINER STYLES ---------- */
+  .ai-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+  }
+
+  .ai-container h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-container p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+  }
+
+  .ai-input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  #prompt-input {
+    flex-grow: 1; /* Takes up available space */
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box; /* Added for consistency */
+  }
+
+  #prompt-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(10, 76, 154, 0.1);
+  }
+
+  #ask-button {
+    background: var(--primary-blue);
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease;
+  }
+
+  #ask-button:hover {
+    background-color: #083d7a; /* A slightly darker blue */
+  }
+
+  #ask-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+
+  #result {
+    margin-top: 15px;
+    padding: 14px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    min-height: 40px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    white-space: pre-wrap; /* Preserves line breaks from AI */
+    border: 1px solid var(--border-color);
+    word-wrap: break-word; /* Ensures long text wraps */
+  }
+  /* ------------------------------------------- */
+
 
   .service-list {
     display: flex;
@@ -149,8 +236,9 @@
     border-top: 1px solid var(--border-color);
     margin-top: 40px;
   }
-
-  .contact-details {
+  
+  /* ... (बाकी Footer और Responsive CSS जैसा था वैसा ही है) ... */
+    .contact-details {
     margin-bottom: 20px;
   }
 
@@ -176,7 +264,6 @@
     border-top: 1px solid var(--border-color);
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 480px) {
     header {
       flex-direction: column;
@@ -199,7 +286,17 @@
       margin-top: 8px;
       font-size: 1.6rem;
     }
+
+    /* (नया) AI बॉक्स को responsive बनाया */
+    .ai-input-group {
+        flex-direction: column;
+    }
+
+    #ask-button {
+        width: 100%; /* बटन को पूरी चौड़ाई दें */
+    }
   }
+
 </style>
 </head>
 <body>
@@ -208,6 +305,7 @@
   <div class="header-left">
     <img src="https://i.ibb.co/3Nn7kVt/profile-pic.jpg" alt="Profile">
     <h1>JAY SHRI RAM COMPUTER</h1>
+    <h6>deepak mponline pawai</h6>
   </div>
 
   <a href="https://wa.me/918839142440?text=Hi%20Deepak" 
@@ -225,6 +323,17 @@
     <input type="text" id="searchInput" placeholder="सेवा खोजें (जैसे: आय, जाति, आधार...)">
   </div>
 
+  <div class="ai-container">
+    <h4><i class="bi bi-robot"></i> AI से सवाल पूछें</h4>
+    <p>दस्तावेजों या अन्य किसी जानकारी के लिए पूछें।</p>
+    
+    <div class="ai-input-group">
+      <input type="text" id="prompt-input" placeholder="अपना सवाल यहाँ लिखें...">
+      <button id="ask-button">पूछें</button>
+    </div>
+    
+    <div id="result">...</div>
+  </div>
   <div class="service-list" id="serviceList"></div>
 </main>
 
@@ -245,6 +354,7 @@
     { name: "आय प्रमाण पत्र (Income)", link: "income.html" },
     { name: "जाति प्रमाण पत्र (Caste)", link: "caste.html" },
     { name: "निवास प्रमाण पत्र (Domicile)", link: "domicile.html" },
+    // ... (आपकी बाकी सभी सर्विसेज़)
     { name: "विवाह पंजीयन (Marriage)", link: "marriage.html" },
     { name: "जन्म प्रमाण पत्र (Birth)", link: "birth.html" },
     { name: "मृत्यु प्रमाण पत्र (Death)", link: "death.html" },
@@ -252,20 +362,21 @@
     { name: "डायवर्सन (Diversion)", link: "diversion.html" },
     { name: "वसीयत (Will)", link: "will.html" },
     { name: "केंद्रीय जाति प्रमाण पत्र", link: "central-caste.html" },
-    { name: "सभी प्रकार के शपथ पत्र", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "खसरा / नक्शा", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "पट्टा की सत्य प्रतिलिपि", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "संबल कार्ड (Sambal Card)", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "समग्र आई.डी (Samagra ID)", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "आयुष्मान कार्ड (Ayushman Card)", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "आधार कार्ड (Aadhaar Card)", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "फोटो बनाना (Photo)", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "रिकॉर्ड रूम से सत्य प्रतिलिपि", link: "#" }, // (इसका पेज PDF में नहीं था)
-    { name: "सभी प्रकार के फॉर्म", link: "#" }, // (इसका पेज PDF में नहीं था)
+    { name: "सभी प्रकार के शपथ पत्र", link: "#" },
+    { name: "खसरा / नक्शा", link: "#" },
+    { name: "पट्टा की सत्य प्रतिलिपि", link: "#" },
+    { name: "संबल कार्ड (Sambal Card)", link: "#" },
+    { name: "समग्र आई.डी (Samagra ID)", link: "#" },
+    { name: "आयुष्मान कार्ड (Ayushman Card)", link: "#" },
+    { name: "आधार कार्ड (Aadhaar Card)", link: "#" },
+    { name: "फोटो बनाना (Photo)", link: "#" },
+    { name: "रिकॉर्ड रूम से सत्य प्रतिलिपि", link: "#" },
+    { name: "सभी प्रकार के फॉर्म", link: "#" },
     { name: "हकत्याग (Relinquishment)", link: "relinquishment.html" }
   ];
   // ==========================
 
+  // (यह आपकी शॉप का पुराना JS है)
   const listContainer = document.getElementById('serviceList');
   const searchInput = document.getElementById('searchInput');
 
@@ -297,6 +408,71 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   renderList(); 
+  // (शॉप का JS यहाँ खत्म)
+
+
+  // ===================================
+  // ===== (नया) AI का SCRIPT यहाँ डाला गया है =====
+  // ===================================
+  const askButton = document.getElementById('ask-button');
+  const promptInput = document.getElementById('prompt-input');
+  const resultDiv = document.getElementById('result');
+
+  // Enter दबाने पर भी सवाल भेजे
+  promptInput.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+          event.preventDefault(); // Form submit होने से रोके
+          askButton.click();
+      }
+  });
+
+  askButton.addEventListener('click', async () => {
+      const prompt = promptInput.value.trim();
+      if (!prompt) {
+          alert('Please enter a question!');
+          return;
+      }
+
+      resultDiv.innerText = "🧠 सोच रहा हूँ...";
+      askButton.disabled = true;
+      promptInput.disabled = true; // Input को भी disable करें
+
+      try {
+          // !!! जरूरी !!!
+          // मैंने यहाँ आपकी Vercel AI का पूरा URL डाल दिया है।
+          const response = await fetch('https://my-ai-website-5w5ypsl1t-md-altafs-projects-48507b70.vercel.app/api/gemini', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ prompt })
+          });
+
+          if (!response.ok) {
+              // सर्वर से एरर मैसेज दिखाने की कोशिश
+              const errorData = await response.json().catch(() => null);
+              const errorMsg = errorData ? JSON.stringify(errorData) : `Error ${response.status}`;
+              throw new Error(`Network response was not ok: ${errorMsg}`);
+          }
+
+          const data = await response.json();
+          resultDiv.innerText = data.reply || "No reply received.";
+
+          // ✅ जवाब आने के बाद input खाली कर दो
+          promptInput.value = "";
+
+      } catch (error) {
+          console.error('Error:', error);
+          resultDiv.innerText = "⚠️ Error! कृपया फिर से प्रयास करें। (हो सकता है Vercel सर्वर सो रहा हो, 5 सेकंड बाद फिर कोशिश करें)";
+      } finally {
+          askButton.disabled = false;
+          promptInput.disabled = false; // Input को फिर से enable करें
+      }
+  });
+  // ===================================
+  // ===== AI SCRIPT END =====
+  // ===================================
+
 </script>
 </body>
 </html>
