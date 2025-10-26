@@ -33,7 +33,6 @@
     min-height: 100vh;
   }
 
-  /* ---------- HEADER ---------- */
   header {
     display: flex;
     align-items: center;
@@ -74,7 +73,6 @@
     gap: 15px; 
   }
 
-  /* === Back to Home बटन स्टाइल === */
   .home-header-button {
     display: flex;
     align-items: center;
@@ -98,7 +96,6 @@
     background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
   }
-  /* ========================== */
 
   .whatsapp-icon {
     color: white;
@@ -113,13 +110,12 @@
     transform: scale(1.15);
   }
 
-  /* ---------- MAIN CONTENT ---------- */
   main {
     max-width: 600px;
     margin: 35px auto;
     padding: 0 15px;
     width: 100%;
-    flex-grow: 1; /* यह main को बची हुई जगह लेने देगा */
+    flex-grow: 1;
   }
 
   h2 {
@@ -129,17 +125,15 @@
     font-weight: 600;
   }
 
-  /* ---------- FORM LIST STYLES ---------- */
-  
   .form-list {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* फॉर्म्स के बीच गैप */
+    gap: 12px;
   }
 
   .form-item {
     display: flex;
-    justify-content: space-between; /* नाम और बटन को अलग किया */
+    justify-content: space-between;
     align-items: center;
     background: white;
     border-radius: 8px;
@@ -154,7 +148,7 @@
   .form-item-name {
     display: flex;
     align-items: center;
-    gap: 12px; /* आइकॉन और नाम के बीच गैप */
+    gap: 12px;
   }
   
   .form-item-name i {
@@ -179,10 +173,7 @@
   .download-btn:hover {
     background-color: #083d7a;
   }
-  /* ------------------------------------------- */
 
-
-  /* ---------- FOOTER ---------- */
   footer {
     text-align: center;
     padding: 30px 15px;
@@ -192,7 +183,7 @@
     margin-top: 40px;
   }
   
-    .contact-details {
+  .contact-details {
     margin-bottom: 20px;
   }
 
@@ -217,34 +208,6 @@
     padding-top: 15px;
     border-top: 1px solid var(--border-color);
   }
-
-  @media (max-width: 480px) {
-    header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 15px;
-    }
-
-    .header-left {
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    header h1 {
-      font-size: 1.2rem;
-    }
-    
-    .header-right {
-        margin-top: 8px;
-    }
-
-    .whatsapp-icon {
-      position: relative;
-      font-size: 1.6rem;
-    }
-  }
-
 </style>
 </head>
 <body>
@@ -272,68 +235,29 @@
 </header>
 
 <main>
-  
   <h2>Available Forms</h2>
 
-  <div class="form-list" id="formList">
-    
-    <div class="form-item">
-      <div class="form-item-name">
-        <i class="bi bi-file-earmark-pdf-fill"></i>
-        <span>आय प्रमाण पत्र फॉर्म (Aay Praman)</span>
-      </div>
-      <a href="aay.pdf" class="download-btn" download>
-        <i class="bi bi-download"></i>
-        Download
-      </a>
-    </div>
-    
-    <div class="form-item">
-      <div class="form-item-name">
-        <i class="bi bi-file-earmark-pdf-fill"></i>
-        <span>निवास प्रमाण पत्र फॉर्म (Nivas Praman)</span>
-      </div>
-      <a href="nivas.pdf" class="download-btn" download>
-        <i class="bi bi-download"></i>
-        Download
-      </a>
-    </div>
-
-    <div class="form-item">
-      <div class="form-item-name">
-        <i class="bi bi-file-earmark-pdf-fill"></i>
-        <span>विवाह पंजीयन फॉर्म (Vivah Panjiyan)</span>
-      </div>
-      <a href="vivahpanjiyan.pdf" class="download-btn" download>
-        <i class="bi bi-download"></i>
-        Download
-      </a>
-    </div>
-
-    <div class="form-item">
-      <div class="form-item-name">
-        <i class="bi bi-file-earmark-pdf-fill"></i>
-        <span>जन्म/मृत्यु फॉर्म (Janm/Mrityu)</span>
-      </div>
-      <a href="janmmrityform.pdf" class="download-btn" download>
-        <i class="bi bi-download"></i>
-        Download
-      </a>
-    </div>
-
-    <div class="form-item">
-      <div class="form-item-name">
-        <i class="bi bi-file-earmark-pdf-fill"></i>
-        <span>नया फॉर्म (New Form)</span>
-      </div>
-      <a href="placeholder.pdf" class="download-btn" download>
-        <i class="bi bi-download"></i>
-        Download
-      </a>
-    </div>
-
-    </div>
-  
+  <div class="form-list">
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आदेशिका तालवाना</span></div><a href="aadeshika talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आंगनवाड़ी प्रमाणिकरण</span></div><a href="aagan vadi pramanikaran.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आय प्रमाण पत्र</span></div><a href="aay.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>अप्राप्त फॉर्म</span></div><a href="aprapta.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>वृद्धा पेंशन</span></div><a href="bradha penstion.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>जन्म प्रमाण पत्र फॉर्म</span></div><a href="janm praman patra form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>लिस्ट कागज</span></div><a href="list kagaj.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>नकल प्रतिवेदन</span></div><a href="nakal prativedan.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>नामांतरण फॉर्म</span></div><a href="namantran form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>निवास प्रमाण पत्र</span></div><a href="nivas.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>OBC जाति</span></div><a href="obc jati.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>पंचनामा प्रमाणिकरण</span></div><a href="panchnama pramanikaran.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>SC जाति PDF</span></div><a href="sc jati pdf.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>SC जाति</span></div><a href="sc jati.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सीमांकन फॉर्म</span></div><a href="seemankan form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिजरा फॉर्म</span></div><a href="sijra.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिकमी सिग्मी</span></div><a href="sikmi sigmi.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>तालवाना फॉर्म</span></div><a href="talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>विवाह पंजीयन फॉर्म</span></div><a href="vivahpanjiyan.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+  </div>
 </main>
 
 <footer>
@@ -348,7 +272,6 @@
 </footer>
 
 <script>
-  // फूटर में साल को ऑटोमैटिक अपडेट करता है
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
