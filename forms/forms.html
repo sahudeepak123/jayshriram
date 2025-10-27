@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Tailwind CSS script added for modern development consistency -->
+    <script src="https://cdn.tailwindcss.com"></script> 
 
 <style>
   :root {
@@ -33,6 +35,7 @@
     min-height: 100vh;
   }
 
+  /* ---------- HEADER ---------- */
   header {
     display: flex;
     align-items: center;
@@ -57,6 +60,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
+    flex-shrink: 0; /* Image should not shrink */
   }
 
   header h1 {
@@ -65,6 +69,22 @@
     font-weight: 600;
     letter-spacing: 0.4px;
     white-space: nowrap;
+    line-height: 1.2; /* Compact line height */
+  }
+  
+  header h6 {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  
+  .header-titles {
+    /* To contain H1 and H6, enabling them to stack correctly */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .header-right {
@@ -208,6 +228,63 @@
     padding-top: 15px;
     border-top: 1px solid var(--border-color);
   }
+  
+  /* ======================================= */
+  /* ---------- MOBILE LAYOUT FIXES ---------- */
+  /* ======================================= */
+  @media (max-width: 480px) {
+    header {
+      /* Main content stacked vertically */
+      flex-direction: column;
+      align-items: flex-start; /* Left-align everything */
+      padding: 12px 16px;
+      gap: 10px; /* Reduced vertical gap between header-left and header-right */
+    }
+
+    .header-left {
+      /* FIX 1: Make Image and Text content flow horizontally */
+      flex-direction: row; 
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5px; /* Small separation from buttons */
+    }
+
+    header img {
+      width: 40px; /* Slightly smaller image on mobile */
+      height: 40px;
+    }
+    
+    header h1 {
+      /* FIX 2: Smaller and more compact H1 */
+      font-size: 1.1rem; 
+      margin: 0;
+    }
+
+    header h6 {
+      /* FIX 2: Smaller and more compact H6 */
+      font-size: 0.8rem;
+      margin: 0;
+      opacity: 0.9;
+    }
+    
+    .header-right {
+        /* FIX 3: Remove excessive vertical margin, rely on 'header' gap */
+        margin-top: 0; 
+        justify-content: flex-start; /* Align buttons to the left */
+        width: 100%;
+        gap: 10px; /* Smaller gap between the two buttons */
+    }
+    
+    .home-header-button {
+        padding: 6px 10px; /* Smaller button on mobile */
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-icon {
+      font-size: 1.5rem;
+    }
+  }
+  /* ======================================= */
 </style>
 </head>
 <body>
@@ -215,8 +292,11 @@
 <header>
   <div class="header-left">
     <img src="/Screenshot 2025-10-25 at 19.44.03.png" alt="Profile">
-    <h1>JAY SHRI RAM COMPUTER</h1>
-    <h6>deepak mponline pawai</h6>
+    <!-- H1 and H6 are wrapped in a div to manage their layout better -->
+    <div class="header-titles">
+        <h1>JAY SHRI RAM COMPUTER</h1>
+        <h6>deepak mponline pawai</h6>
+    </div>
   </div>
 
   <div class="header-right">
@@ -238,24 +318,41 @@
   <h2>Available Forms</h2>
 
   <div class="form-list">
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आदेशिका तालवाना</span></div><a href="aadeshika talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <!-- 1. अ-सेक्शन (A) -->
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>अप्राप्त फॉर्म</span></div><a href="aprapta.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    
+    <!-- 2. आ-सेक्शन (Aa) -->
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आंगनवाड़ी प्रमाणिकरण</span></div><a href="aagan vadi pramanikaran.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आय प्रमाण पत्र</span></div><a href="aay.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>अप्राप्त फॉर्म</span></div><a href="aprapta.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>वृद्धा पेंशन</span></div><a href="bradha penstion.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>जन्म प्रमाण पत्र फॉर्म</span></div><a href="janm praman patra form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>लिस्ट कागज</span></div><a href="list kagaj.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आदेशिका तालवाना</span></div><a href="aadeshika talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    
+    <!-- 3. ज-सेक्शन (Ja) -->
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>जन्म प्रमाण पत्र</span></div><a href="janm praman patra form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    
+    <!-- 4. न-सेक्शन (Na) -->
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>नकल प्रतिवेदन</span></div><a href="nakal prativedan.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>नामांतरण फॉर्म</span></div><a href="namantran form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>निवास प्रमाण पत्र</span></div><a href="nivas.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>OBC जाति</span></div><a href="obc jati.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+
+    <!-- 5. प-सेक्शन (Pa) -->
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>पंचनामा प्रमाणिकरण</span></div><a href="panchnama pramanikaran.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>SC जाति PDF</span></div><a href="sc jati pdf.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सीमांकन फॉर्म</span></div><a href="seemankan form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिजरा फॉर्म</span></div><a href="sijra.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिकमी सिग्मी</span></div><a href="sikmi sigmi.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+
+    <!-- 6. त-सेक्शन (Ta) -->
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>तालवाना फॉर्म</span></div><a href="talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+
+    <!-- 7. व-सेक्शन (Va) -->
     <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>विवाह पंजीयन फॉर्म</span></div><a href="vivahpanjiyan.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>वृद्धा पेंशन</span></div><a href="bradha penstion.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    
+    <!-- 8. स-सेक्शन (Sa) -->
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिकमी</span></div><a href="sikmi sigmi.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिजरा फॉर्म</span></div><a href="sijra.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सीमांकन</span></div><a href="seemankan form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    
+    <!-- 9. English/Acronyms (अन्य) -->
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>लिस्ट कागज</span></div><a href="list kagaj.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>OBC जाति</span></div><a href="obc jati.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>SC जाति</span></div><a href="sc jati pdf.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
   </div>
 </main>
 
