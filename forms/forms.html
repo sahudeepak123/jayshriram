@@ -1,374 +1,273 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi-IN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Available Forms - JSRC Pawai</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="जय श्री राम कंप्यूटर, पवई पर उपलब्ध सभी प्रकार के दस्तावेज़ों के फॉर्म डाउनलोड करें।">
-    <meta name="author" content="Deepak Sahu, JSRC Pawai">
+<title>Available Forms - JSRC Pawai</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <!-- Tailwind CSS script added for modern development consistency -->
-    <script src="https://cdn.tailwindcss.com"></script> 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 <style>
-  :root {
-    --primary-blue: #0a4c9a;
-    --light-gray: #f4f7f6;
-    --text-dark: #212529;
-    --text-light: #555;
-    --border-color: #e0e0e0;
-  }
+:root{
+ --blue:#0a4c9a;
+ --bg:#f4f7f6;
+ --border:#e0e0e0;
+}
 
-  body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: var(--light-gray);
-    margin: 0;
-    padding: 0;
-    color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+body{
+ margin:0;
+ font-family:Inter,Arial;
+ background:var(--bg);
+}
 
-  /* ---------- HEADER ---------- */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--primary-blue);
-    color: white;
-    padding: 12px 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+/* HEADER */
+header{
+ background:var(--blue);
+ color:#fff;
+ padding:12px 16px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:10px;
+}
 
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+.header-left{
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
 
-  header img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-    flex-shrink: 0; /* Image should not shrink */
-  }
+header img{
+ width:45px;
+ height:45px;
+ border-radius:50%;
+ border:2px solid #fff;
+ cursor:pointer;
+}
 
-  header h1 {
-    font-size: 1.3rem;
-    margin: 0;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    white-space: nowrap;
-    line-height: 1.2; /* Compact line height */
-  }
-  
-  header h6 {
-    margin: 0;
-    line-height: 1.2;
-    font-size: 0.9rem;
-    font-weight: 400;
-    opacity: 0.8;
-  }
-  
-  .header-titles {
-    /* To contain H1 and H6, enabling them to stack correctly */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
-  }
+.header-titles h1{
+ margin:0;
+ font-size:1.2rem;
+}
+.header-titles h6{
+ margin:0;
+ font-size:.85rem;
+ opacity:.85;
+}
 
-  .home-header-button {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-  }
-  
-  .home-header-button i {
-    font-size: 1.1rem;
-  }
+.header-right{
+ display:flex;
+ gap:12px;
+}
 
-  .home-header-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-  }
+.home-header-button{
+ background:rgba(255,255,255,.15);
+ padding:7px 12px;
+ border-radius:6px;
+ text-decoration:none;
+ color:#fff;
+}
 
-  .whatsapp-icon {
-    color: white;
-    font-size: 1.8rem;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-    display: flex; 
-    align-items: center;
-  }
+.whatsapp-icon{
+ font-size:1.6rem;
+ color:#fff;
+}
 
-  .whatsapp-icon:hover {
-    transform: scale(1.15);
-  }
+/* MAIN */
+main{
+ max-width:600px;
+ margin:30px auto;
+ padding:0 15px;
+}
 
-  main {
-    max-width: 600px;
-    margin: 35px auto;
-    padding: 0 15px;
-    width: 100%;
-    flex-grow: 1;
-  }
+h2{
+ text-align:center;
+ color:var(--blue);
+}
 
-  h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: var(--primary-blue);
-    font-weight: 600;
-  }
+/* SEARCH */
+.search-box{
+ margin:20px 0;
+}
+.search-box input{
+ width:100%;
+ padding:12px 18px;
+ border-radius:25px;
+ border:1px solid #ccc;
+ font-size:1rem;
+}
 
-  .form-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+/* FORM LIST */
+.form-list{
+ display:flex;
+ flex-direction:column;
+ gap:12px;
+}
 
-  .form-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    border-radius: 8px;
-    padding: 14px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-color);
-    color: var(--text-dark);
-  }
+.form-item{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ background:#fff;
+ padding:14px 20px;
+ border-radius:8px;
+ border:1px solid var(--border);
+}
 
-  .form-item-name {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .form-item-name i {
-    color: var(--primary-blue);
-    font-size: 1.2rem;
-  }
+.form-name{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ font-weight:500;
+}
 
-  .download-btn {
-    background: var(--primary-blue);
-    color: white;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.2s ease;
-  }
+.download-btn{
+ background:var(--blue);
+ color:#fff;
+ padding:7px 14px;
+ border-radius:6px;
+ text-decoration:none;
+ font-size:.9rem;
+}
 
-  .download-btn:hover {
-    background-color: #083d7a;
-  }
+/* FOOTER */
+footer{
+ text-align:center;
+ padding:25px 10px;
+ border-top:1px solid var(--border);
+ font-size:.9rem;
+}
 
-  footer {
-    text-align: center;
-    padding: 30px 15px;
-    font-size: 0.9rem;
-    color: var(--text-light);
-    border-top: 1px solid var(--border-color);
-    margin-top: 40px;
-  }
-  
-  .contact-details {
-    margin-bottom: 20px;
-  }
-
-  .contact-details p {
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    font-weight: 500;
-    margin: 8px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .contact-details p i {
-    color: var(--primary-blue);
-    font-size: 1.1rem;
-  }
-
-  .copyright-text {
-    margin: 0;
-    padding-top: 15px;
-    border-top: 1px solid var(--border-color);
-  }
-  
-  /* ======================================= */
-  /* ---------- MOBILE LAYOUT FIXES ---------- */
-  /* ======================================= */
-  @media (max-width: 480px) {
-    header {
-      /* Main content stacked vertically */
-      flex-direction: column;
-      align-items: flex-start; /* Left-align everything */
-      padding: 12px 16px;
-      gap: 10px; /* Reduced vertical gap between header-left and header-right */
-    }
-
-    .header-left {
-      /* FIX 1: Make Image and Text content flow horizontally */
-      flex-direction: row; 
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 5px; /* Small separation from buttons */
-    }
-
-    header img {
-      width: 40px; /* Slightly smaller image on mobile */
-      height: 40px;
-    }
-    
-    header h1 {
-      /* FIX 2: Smaller and more compact H1 */
-      font-size: 1.1rem; 
-      margin: 0;
-    }
-
-    header h6 {
-      /* FIX 2: Smaller and more compact H6 */
-      font-size: 0.8rem;
-      margin: 0;
-      opacity: 0.9;
-    }
-    
-    .header-right {
-        /* FIX 3: Remove excessive vertical margin, rely on 'header' gap */
-        margin-top: 0; 
-        justify-content: flex-start; /* Align buttons to the left */
-        width: 100%;
-        gap: 10px; /* Smaller gap between the two buttons */
-    }
-    
-    .home-header-button {
-        padding: 6px 10px; /* Smaller button on mobile */
-        font-size: 0.9rem;
-    }
-
-    .whatsapp-icon {
-      font-size: 1.5rem;
-    }
-  }
-  /* ======================================= */
+/* IMAGE MODAL */
+.img-modal{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.85);
+ justify-content:center;
+ align-items:center;
+ z-index:9999;
+}
+.img-modal img{
+ max-width:90%;
+ max-height:90%;
+ border-radius:10px;
+}
+.close-btn{
+ position:absolute;
+ top:20px;
+ right:25px;
+ font-size:32px;
+ color:#fff;
+ cursor:pointer;
+}
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="header-left">
-    <img src="/Screenshot 2025-10-25 at 19.44.03.png" alt="Profile">
-    <!-- H1 and H6 are wrapped in a div to manage their layout better -->
+    <img src="/Screenshot 2025-10-25 at 19.44.03.png" id="profileImg">
     <div class="header-titles">
-        <h1>JAY SHRI RAM COMPUTER</h1>
-        <h6>deepak mponline pawai</h6>
+      <h1>JAY SHRI RAM COMPUTER</h1>
+      <h6>deepak mponline pawai</h6>
     </div>
   </div>
 
   <div class="header-right">
-    <a href="/index.html" class="home-header-button" title="वापस होम पर जाएं">
-      <i class="bi bi-house-door-fill"></i>
-      <span>Home</span>
-    </a>
-    
-    <a href="https://wa.me/918839142440?text=Hi%20Deepak" 
-       class="whatsapp-icon" 
-       target="_blank" 
-       title="Contact on WhatsApp">
+    <a href="/index.html" class="home-header-button">🏠 Home</a>
+    <a href="https://wa.me/918839142440" class="whatsapp-icon" target="_blank">
       <i class="bi bi-whatsapp"></i>
     </a>
   </div>
 </header>
 
 <main>
-  <h2>Available Forms</h2>
+<h2>Available Forms</h2>
 
-  <div class="form-list">
-    <!-- 1. अ-सेक्शन (A) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>अप्राप्त फॉर्म</span></div><a href="aprapta.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    
-    <!-- 2. आ-सेक्शन (Aa) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आंगनवाड़ी प्रमाणिकरण</span></div><a href="aagan vadi pramanikaran.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आय प्रमाण पत्र</span></div><a href="aay.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>आदेशिका तालवाना</span></div><a href="aadeshika talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    
-    <!-- 3. ज-सेक्शन (Ja) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>जन्म प्रमाण पत्र</span></div><a href="janm praman patra form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    
-    <!-- 4. न-सेक्शन (Na) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>नकल प्रतिवेदन</span></div><a href="nakal prativedan.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>नामांतरण फॉर्म</span></div><a href="namantran form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>निवास प्रमाण पत्र</span></div><a href="nivas.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
+<!-- SEARCH BOX -->
+<div class="search-box">
+<input id="searchInput" placeholder="Search form / फॉर्म खोजें (आय, aay, jati...)">
+</div>
 
-    <!-- 5. प-सेक्शन (Pa) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>पंचनामा प्रमाणिकरण</span></div><a href="panchnama pramanikaran.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-
-    <!-- 6. त-सेक्शन (Ta) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>तालवाना फॉर्म</span></div><a href="talvana.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-
-    <!-- 7. व-सेक्शन (Va) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>विवाह पंजीयन फॉर्म</span></div><a href="vivahpanjiyan.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>वृद्धा पेंशन</span></div><a href="bradha penstion.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    
-    <!-- 8. स-सेक्शन (Sa) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिकमी</span></div><a href="sikmi sigmi.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सिजरा फॉर्म</span></div><a href="sijra.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>सीमांकन</span></div><a href="seemankan form.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    
-    <!-- 9. English/Acronyms (अन्य) -->
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>लिस्ट कागज</span></div><a href="list kagaj.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>OBC जाति</span></div><a href="obc jati.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-    <div class="form-item"><div class="form-item-name"><i class="bi bi-file-earmark-pdf-fill"></i><span>SC जाति</span></div><a href="sc jati pdf.pdf" class="download-btn" download><i class="bi bi-download"></i>Download</a></div>
-  </div>
+<!-- FORM LIST -->
+<div class="form-list" id="formList"></div>
 </main>
 
 <footer>
-  <div class="contact-details">
-    <p><i class="bi bi-telephone-fill"></i> +91 8839142440</p>
-    <p><i class="bi bi-geo-alt-fill"></i> Tahsheel Parishad Pawai, 488446</p>
-  </div>
-
-  <p class="copyright-text">
-    © <span id="year"></span> JSRC. All Rights Reserved.
-  </p>
+<p>📞 8839142440 | 📍 Tahsheel Parishad Pawai</p>
+<p>© <span id="year"></span> JSRC</p>
 </footer>
 
+<!-- IMAGE MODAL -->
+<div id="imgModal" class="img-modal">
+  <span class="close-btn">&times;</span>
+  <img id="modalImg">
+</div>
+
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded",()=>{
+
+/* ===== FORMS DATA ===== */
+const forms=[
+ {name:"आय प्रमाण पत्र",file:"aay.pdf",keys:["आय","aay","income"]},
+ {name:"जाति प्रमाण पत्र",file:"obc jati.pdf",keys:["जाति","jati","jaati","caste"]},
+ {name:"निवास प्रमाण पत्र",file:"nivas.pdf",keys:["निवास","niwas","domicile"]},
+ {name:"जन्म प्रमाण पत्र",file:"janm praman patra form.pdf",keys:["जन्म","janam","birth"]},
+ {name:"विवाह पंजीयन",file:"vivahpanjiyan.pdf",keys:["विवाह","shadi","marriage"]},
+ {name:"वृद्धा पेंशन",file:"bradha penstion.pdf",keys:["pension","वृद्धा"]},
+ {name:"सीमांकन",file:"seemankan form.pdf",keys:["सीमांकन","seemankan"]},
+ {name:"नामांतरण",file:"namantran form.pdf",keys:["नामांतरण","mutation"]}
+];
+
+const list=document.getElementById("formList");
+const input=document.getElementById("searchInput");
+
+function render(data){
+ list.innerHTML="";
+ if(!data.length){
+  list.innerHTML="<div class='form-item'>कोई फॉर्म नहीं मिला</div>";
+  return;
+ }
+ data.forEach(f=>{
+  list.innerHTML+=`
+  <div class="form-item">
+    <div class="form-name"><i class="bi bi-file-earmark-pdf-fill"></i>${f.name}</div>
+    <a href="${f.file}" class="download-btn" download>Download</a>
+  </div>`;
+ });
+}
+
+input.addEventListener("input",()=>{
+ const t=input.value.toLowerCase();
+ render(forms.filter(f=>
+  f.name.includes(t) || f.keys.some(k=>k.includes(t))
+ ));
+});
+
+render(forms);
+
+/* IMAGE MODAL */
+const profileImg=document.getElementById("profileImg");
+const modal=document.getElementById("imgModal");
+const modalImg=document.getElementById("modalImg");
+const closeBtn=document.querySelector(".close-btn");
+
+profileImg.onclick=()=>{
+ modal.style.display="flex";
+ modalImg.src=profileImg.src;
+};
+closeBtn.onclick=()=>modal.style.display="none";
+modal.onclick=e=>{
+ if(e.target===modal) modal.style.display="none";
+};
+
+document.getElementById("year").textContent=new Date().getFullYear();
+});
 </script>
 
 </body>
