@@ -48,22 +48,15 @@ header img{
  cursor:pointer;
 }
 
-.header-titles h1{
- margin:0;
- font-size:1.2rem;
-}
-.header-titles h6{
- margin:0;
- font-size:.85rem;
- opacity:.85;
-}
+.header-titles h1{margin:0;font-size:1.2rem;}
+.header-titles h6{margin:0;font-size:.85rem;opacity:.85;}
 
 .header-right{
  display:flex;
  gap:12px;
 }
 
-.home-header-button{
+.home-btn{
  background:rgba(255,255,255,.15);
  padding:7px 12px;
  border-radius:6px;
@@ -71,7 +64,7 @@ header img{
  color:#fff;
 }
 
-.whatsapp-icon{
+.whatsapp{
  font-size:1.6rem;
  color:#fff;
 }
@@ -83,15 +76,10 @@ main{
  padding:0 15px;
 }
 
-h2{
- text-align:center;
- color:var(--blue);
-}
+h2{text-align:center;color:var(--blue);}
 
 /* SEARCH */
-.search-box{
- margin:20px 0;
-}
+.search-box{margin:20px 0;}
 .search-box input{
  width:100%;
  padding:12px 18px;
@@ -179,8 +167,8 @@ footer{
   </div>
 
   <div class="header-right">
-    <a href="/index.html" class="home-header-button">🏠 Home</a>
-    <a href="https://wa.me/918839142440" class="whatsapp-icon" target="_blank">
+    <a href="/index.html" class="home-btn">🏠 Home</a>
+    <a href="https://wa.me/918839142440" class="whatsapp" target="_blank">
       <i class="bi bi-whatsapp"></i>
     </a>
   </div>
@@ -189,18 +177,19 @@ footer{
 <main>
 <h2>Available Forms</h2>
 
-<!-- SEARCH BOX -->
 <div class="search-box">
-<input id="searchInput" placeholder="Search form / फॉर्म खोजें (आय, aay, jati...)">
+<input id="searchInput" placeholder="Search / फॉर्म खोजें (आय, aay, jati, nivas...)">
 </div>
 
-<!-- FORM LIST -->
 <div class="form-list" id="formList"></div>
 </main>
 
 <footer>
 <p>📞 8839142440 | 📍 Tahsheel Parishad Pawai</p>
 <p>© <span id="year"></span> JSRC</p>
+ <a href="https://studentdesk.help" target="_blank" rel="noopener">
+  Contact Developer / डेवलपर से संपर्क करें
+</a>
 </footer>
 
 <!-- IMAGE MODAL -->
@@ -212,16 +201,26 @@ footer{
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
 
-/* ===== FORMS DATA ===== */
+/* ===== ALL FORMS DATA (NO FORM REMOVED) ===== */
 const forms=[
- {name:"आय प्रमाण पत्र",file:"aay.pdf",keys:["आय","aay","income"]},
- {name:"जाति प्रमाण पत्र",file:"obc jati.pdf",keys:["जाति","jati","jaati","caste"]},
- {name:"निवास प्रमाण पत्र",file:"nivas.pdf",keys:["निवास","niwas","domicile"]},
- {name:"जन्म प्रमाण पत्र",file:"janm praman patra form.pdf",keys:["जन्म","janam","birth"]},
- {name:"विवाह पंजीयन",file:"vivahpanjiyan.pdf",keys:["विवाह","shadi","marriage"]},
- {name:"वृद्धा पेंशन",file:"bradha penstion.pdf",keys:["pension","वृद्धा"]},
- {name:"सीमांकन",file:"seemankan form.pdf",keys:["सीमांकन","seemankan"]},
- {name:"नामांतरण",file:"namantran form.pdf",keys:["नामांतरण","mutation"]}
+ {n:"अप्राप्त फॉर्म",f:"aprapta.pdf",k:["अप्राप्त","aprapta"]},
+ {n:"आंगनवाड़ी प्रमाणिकरण",f:"aagan vadi pramanikaran.pdf",k:["आंगनवाड़ी","anganwadi"]},
+ {n:"आय प्रमाण पत्र",f:"aay.pdf",k:["आय","aay","income"]},
+ {n:"आदेशिका तालवाना",f:"aadeshika talvana.pdf",k:["आदेशिका","talvana"]},
+ {n:"जन्म प्रमाण पत्र",f:"janm praman patra form.pdf",k:["जन्म","janam","birth"]},
+ {n:"नकल प्रतिवेदन",f:"nakal prativedan.pdf",k:["नकल","copy"]},
+ {n:"नामांतरण फॉर्म",f:"namantran form.pdf",k:["नामांतरण","mutation"]},
+ {n:"निवास प्रमाण पत्र",f:"nivas.pdf",k:["निवास","nivas","domicile"]},
+ {n:"पंचनामा प्रमाणिकरण",f:"panchnama pramanikaran.pdf",k:["पंचनामा","panchnama"]},
+ {n:"तालवाना फॉर्म",f:"talvana.pdf",k:["तालवाना","talvana"]},
+ {n:"विवाह पंजीयन फॉर्म",f:"vivahpanjiyan.pdf",k:["विवाह","shadi","marriage"]},
+ {n:"वृद्धा पेंशन",f:"bradha penstion.pdf",k:["वृद्धा","pension"]},
+ {n:"सिकमी",f:"sikmi sigmi.pdf",k:["सिकमी","sikmi"]},
+ {n:"सिजरा फॉर्म",f:"sijra.pdf",k:["सिजरा","sijra"]},
+ {n:"सीमांकन",f:"seemankan form.pdf",k:["सीमांकन","seemankan"]},
+ {n:"लिस्ट कागज",f:"list kagaj.pdf",k:["लिस्ट","list"]},
+ {n:"OBC जाति",f:"obc jati.pdf",k:["obc","jati","caste"]},
+ {n:"SC जाति",f:"sc jati pdf.pdf",k:["sc","jati","caste"]}
 ];
 
 const list=document.getElementById("formList");
@@ -233,19 +232,22 @@ function render(data){
   list.innerHTML="<div class='form-item'>कोई फॉर्म नहीं मिला</div>";
   return;
  }
- data.forEach(f=>{
+ data.forEach(x=>{
   list.innerHTML+=`
   <div class="form-item">
-    <div class="form-name"><i class="bi bi-file-earmark-pdf-fill"></i>${f.name}</div>
-    <a href="${f.file}" class="download-btn" download>Download</a>
+    <div class="form-name">
+      <i class="bi bi-file-earmark-pdf-fill"></i>${x.n}
+    </div>
+    <a href="${x.f}" class="download-btn" download>Download</a>
   </div>`;
  });
 }
 
 input.addEventListener("input",()=>{
- const t=input.value.toLowerCase();
- render(forms.filter(f=>
-  f.name.includes(t) || f.keys.some(k=>k.includes(t))
+ const t=input.value.toLowerCase().trim();
+ render(forms.filter(x=>
+  x.n.toLowerCase().includes(t) ||
+  x.k.some(k=>k.toLowerCase().includes(t))
  ));
 });
 
