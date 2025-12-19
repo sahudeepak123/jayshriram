@@ -20,6 +20,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+    /* IMAGE MODAL STYLE */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  animation: zoomIn 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
   :root {
     --primary-blue: #0a4c9a;
     --light-gray: #f4f7f6;
@@ -299,7 +335,12 @@
 
 <header>
   <div class="header-left">
-    <img src="Screenshot 2025-10-25 at 19.44.03.png" alt="Profile">
+    <img 
+  src="Screenshot 2025-10-25 at 19.44.03.png" 
+  alt="Profile"
+  id="profileImg"
+  style="cursor:pointer;"
+>
     <!-- H1 and H6 are wrapped in a div to manage their layout better -->
     <div class="header-titles">
       <h1>JAY SHRI RAM COMPUTER</h1>
@@ -347,30 +388,70 @@
 
 <script>
   // ===== सर्विस लिस्ट (लिंक के साथ) =====
-  const services = [
-    { name: "आय प्रमाण पत्र (Income)", link: "income.html" },
-    { name: "जाति प्रमाण पत्र (Caste)", link: "caste.html" },
-    { name: "निवास प्रमाण पत्र (Domicile)", link: "domicile.html" },
-    { name: "विवाह पंजीयन (Marriage)", link: "marriage.html" },
-    { name: "जन्म प्रमाण पत्र (Birth)", link: "birth.html" }, 
-    { name: "मृत्यु प्रमाण पत्र (Death)", link: "death.html" },
-    { name: "रजिस्ट्री (Registry)", link: "registry.html" },
-    { name: "डायवर्सन (Diversion)", link: "diversion.html" },
-    { name: "वसीयत (Will)", link: "will.html" },
-    { name: "हकत्याग (Relinquishment)", link: "relinquishment.html" },
-    { name: "केंद्रीय जाति प्रमाण पत्र", link: "central-caste.html" },
-    { name: "सभी प्रकार के शपथ पत्र", link: "contact.html" },
-    { name: "खसरा / नक्शा", link: "contact.html" },
-    { name: "पट्टा की सत्य प्रतिलिपि", link: "contact.html" },
-    { name: "संबल कार्ड निकालना(Sambal Card)", link: "contact.html" },
-    { name: "समग्र आई.डी निकालना(Samagra ID)", link: "contact.html" },
-    { name: "आयुष्मान कार्ड निकालना(Ayushman Card)", link: "contact.html" },
-    { name: "आधार कार्ड निकालना  (Aadhaar Card)", link: "contact.html" },
-    { name: "फोटो बनाना (Photo)", link: "contact.html" },
-    { name: "रिकॉर्ड रूम से सत्य प्रतिलिपि ", link: "contact.html" },
-    { name: "सभी प्रकार के फॉर्म उपलब्ध ", link: "contact.html" }
-    
-  ];
+ const services = [
+  { name:"आय प्रमाण पत्र (Income Certificate)", link:"income.html",
+    keywords:["आय","income","aay","income certificate","income praman"] },
+
+  { name:"जाति प्रमाण पत्र (Caste Certificate)", link:"caste.html",
+    keywords:["जाति","jaati","caste","caste certificate"] },
+
+  { name:"निवास प्रमाण पत्र (Domicile)", link:"domicile.html",
+    keywords:["निवास","niwas","domicile","residence"] },
+
+  { name:"विवाह पंजीयन (Marriage)", link:"marriage.html",
+    keywords:["विवाह","shadi","marriage"] },
+
+  { name:"जन्म प्रमाण पत्र (Birth)", link:"birth.html",
+    keywords:["जन्म","birth","janam"] },
+
+  { name:"मृत्यु प्रमाण पत्र (Death)", link:"death.html",
+    keywords:["मृत्यु","death","maran"] },
+
+  { name:"रजिस्ट्री (Registry)", link:"registry.html",
+    keywords:["registry","रजिस्ट्री","land registry"] },
+
+  { name:"डायवर्सन (Diversion)", link:"diversion.html",
+    keywords:["diversion","डायवर्सन"] },
+
+  { name:"वसीयत (Will)", link:"will.html",
+    keywords:["will","वसीयत","vasiyat"] },
+
+  { name:"हकत्याग (Relinquishment)", link:"relinquishment.html",
+    keywords:["हकत्याग","relinquishment"] },
+
+  { name:"केंद्रीय जाति प्रमाण पत्र", link:"central-caste.html",
+    keywords:["central caste","केंद्रीय जाति"] },
+
+  { name:"सभी प्रकार के शपथ पत्र", link:"contact.html",
+    keywords:["affidavit","शपथ पत्र"] },
+
+  { name:"खसरा / नक्शा", link:"contact.html",
+    keywords:["khasra","खसरा","map","naksha"] },
+
+  { name:"पट्टा की सत्य प्रतिलिपि", link:"contact.html",
+    keywords:["patta","पट्टा","copy"] },
+
+  { name:"संबल कार्ड (Sambal Card)", link:"contact.html",
+    keywords:["sambal","संबल"] },
+
+  { name:"समग्र आईडी (Samagra ID)", link:"contact.html",
+    keywords:["samagra","समग्र","id"] },
+
+  { name:"आयुष्मान कार्ड (Ayushman Card)", link:"contact.html",
+    keywords:["ayushman","आयुष्मान","health card"] },
+
+  { name:"आधार कार्ड (Aadhaar Card)", link:"contact.html",
+    keywords:["aadhaar","aadhar","आधार","uid"] },
+
+  { name:"फोटो बनाना (Photo)", link:"contact.html",
+    keywords:["photo","फोटो","passport photo"] },
+
+  { name:"रिकॉर्ड रूम से सत्य प्रतिलिपि", link:"contact.html",
+    keywords:["record room","रिकॉर्ड"] },
+
+  { name:"सभी प्रकार के फॉर्म उपलब्ध", link:"contact.html",
+    keywords:["forms","फॉर्म","application"] }
+];
   // ==========================
 
 
@@ -406,7 +487,31 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   renderList(); 
+    const profileImg = document.getElementById("profileImg");
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close-btn");
+
+profileImg.onclick = () => {
+  modal.style.display = "flex";
+  modalImg.src = profileImg.src;
+};
+
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
   
 </script>
+    <!-- IMAGE MODAL -->
+<div id="imgModal" class="img-modal">
+  <span class="close-btn">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 </body>
 </html>
