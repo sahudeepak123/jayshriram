@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Available Forms - JSRC Pawai</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
@@ -15,13 +13,11 @@
  --bg:#f4f7f6;
  --border:#e0e0e0;
 }
-
 body{
  margin:0;
  font-family:Inter,Arial;
  background:var(--bg);
 }
-
 /* HEADER */
 header{
  background:var(--blue);
@@ -33,13 +29,11 @@ header{
  flex-wrap:wrap;
  gap:10px;
 }
-
 .header-left{
  display:flex;
  align-items:center;
  gap:10px;
 }
-
 header img{
  width:45px;
  height:45px;
@@ -47,15 +41,9 @@ header img{
  border:2px solid #fff;
  cursor:pointer;
 }
-
 .header-titles h1{margin:0;font-size:1.2rem;}
 .header-titles h6{margin:0;font-size:.85rem;opacity:.85;}
-
-.header-right{
- display:flex;
- gap:12px;
-}
-
+.header-right{display:flex;gap:12px;}
 .home-btn{
  background:rgba(255,255,255,.15);
  padding:7px 12px;
@@ -63,19 +51,10 @@ header img{
  text-decoration:none;
  color:#fff;
 }
-
-.whatsapp{
- font-size:1.6rem;
- color:#fff;
-}
+.whatsapp{font-size:1.6rem;color:#fff;}
 
 /* MAIN */
-main{
- max-width:600px;
- margin:30px auto;
- padding:0 15px;
-}
-
+main{max-width:600px;margin:30px auto;padding:0 15px;}
 h2{text-align:center;color:var(--blue);}
 
 /* SEARCH */
@@ -89,12 +68,7 @@ h2{text-align:center;color:var(--blue);}
 }
 
 /* FORM LIST */
-.form-list{
- display:flex;
- flex-direction:column;
- gap:12px;
-}
-
+.form-list{display:flex;flex-direction:column;gap:12px;}
 .form-item{
  display:flex;
  justify-content:space-between;
@@ -104,14 +78,7 @@ h2{text-align:center;color:var(--blue);}
  border-radius:8px;
  border:1px solid var(--border);
 }
-
-.form-name{
- display:flex;
- align-items:center;
- gap:10px;
- font-weight:500;
-}
-
+.form-name{display:flex;align-items:center;gap:10px;font-weight:500;}
 .download-btn{
  background:var(--blue);
  color:#fff;
@@ -120,14 +87,20 @@ h2{text-align:center;color:var(--blue);}
  text-decoration:none;
  font-size:.9rem;
 }
+.print-btn{
+ background:#28a745;
+ color:#fff;
+ padding:7px 14px;
+ border-radius:6px;
+ border:none;
+ cursor:pointer;
+ font-size:.9rem;
+ margin-left:8px;
+}
+.print-btn:hover{background:#218838;}
 
 /* FOOTER */
-footer{
- text-align:center;
- padding:25px 10px;
- border-top:1px solid var(--border);
- font-size:.9rem;
-}
+footer{text-align:center;padding:25px 10px;border-top:1px solid var(--border);font-size:.9rem;}
 
 /* IMAGE MODAL */
 .img-modal{
@@ -153,8 +126,8 @@ footer{
  cursor:pointer;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
@@ -165,7 +138,6 @@ footer{
       <h6>deepak mponline pawai</h6>
     </div>
   </div>
-
   <div class="header-right">
     <a href="/index.html" class="home-btn">🏠 Home</a>
     <a href="https://wa.me/918839142440" class="whatsapp" target="_blank">
@@ -175,21 +147,17 @@ footer{
 </header>
 
 <main>
-<h2>Available Forms</h2>
-
-<div class="search-box">
-<input id="searchInput" placeholder="Search / फॉर्म खोजें (आय, aay, jati, nivas...)">
-</div>
-
-<div class="form-list" id="formList"></div>
+  <h2>Available Forms</h2>
+  <div class="search-box">
+    <input id="searchInput" placeholder="Search / फॉर्म खोजें (आय, aay, jati, nivas...)">
+  </div>
+  <div class="form-list" id="formList"></div>
 </main>
 
 <footer>
-<p>📞 8839142440 | 📍 Tahsheel Parishad Pawai</p>
-<p>© <span id="year"></span> JSRC</p>
- <a href="https://studentdesk.help" target="_blank" rel="noopener">
-  Contact Developer / डेवलपर से संपर्क करें
-</a>
+  <p>📞 8839142440 | 📍 Tahsheel Parishad Pawai</p>
+  <p>© <span id="year"></span> JSRC</p>
+  <a href="https://studentdesk.help" target="_blank" rel="noopener">Contact Developer / डेवलपर से संपर्क करें</a>
 </footer>
 
 <!-- IMAGE MODAL -->
@@ -200,81 +168,91 @@ footer{
 
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
-
-/* ===== ALL FORMS DATA (NO FORM REMOVED) ===== */
-const forms=[
- {n:"अप्राप्त फॉर्म",f:"aprapta.pdf",k:["अप्राप्त","aprapta"]},
- {n:"आंगनवाड़ी प्रमाणिकरण",f:"aagan vadi pramanikaran.pdf",k:["आंगनवाड़ी","anganwadi"]},
- {n:"आय प्रमाण पत्र",f:"aay.pdf",k:["आय","aay","income"]},
- {n:"आदेशिका तालवाना",f:"aadeshika talvana.pdf",k:["आदेशिका","talvana"]},
- {n:"जन्म प्रमाण पत्र",f:"janm praman patra form.pdf",k:["जन्म","janam","birth"]},
- {n:"नकल प्रतिवेदन",f:"nakal prativedan.pdf",k:["नकल","copy"]},
- {n:"नामांतरण फॉर्म",f:"namantran form.pdf",k:["नामांतरण","mutation"]},
- {n:"निवास प्रमाण पत्र",f:"nivas.pdf",k:["निवास","nivas","domicile"]},
- {n:"पंचनामा प्रमाणिकरण",f:"panchnama pramanikaran.pdf",k:["पंचनामा","panchnama"]},
- {n:"तालवाना फॉर्म",f:"talvana.pdf",k:["तालवाना","talvana"]},
- {n:"विवाह पंजीयन फॉर्म",f:"vivahpanjiyan.pdf",k:["विवाह","shadi","marriage"]},
- {n:"वृद्धा पेंशन",f:"bradha penstion.pdf",k:["वृद्धा","pension"]},
- {n:"सिकमी",f:"sikmi sigmi.pdf",k:["सिकमी","sikmi"]},
- {n:"सिजरा फॉर्म",f:"sijra.pdf",k:["सिजरा","sijra"]},
- {n:"सीमांकन",f:"seemankan form.pdf",k:["सीमांकन","seemankan"]},
- {n:"लिस्ट कागज",f:"list kagaj.pdf",k:["लिस्ट","list"]},
- {n:"OBC जाति",f:"obc jati.pdf",k:["obc","jati","caste"]},
- {n:"SC जाति",f:"sc jati pdf.pdf",k:["sc","jati","caste"]},
+ const forms=[
+  {n:"अप्राप्त फॉर्म",f:"aprapta.pdf",k:["अप्राप्त","aprapta"]},
+  {n:"आंगनवाड़ी प्रमाणिकरण",f:"aagan vadi pramanikaran.pdf",k:["आंगनवाड़ी","anganwadi"]},
+  {n:"आय प्रमाण पत्र",f:"aay.pdf",k:["आय","aay","income"]},
+  {n:"आदेशिका तालवाना",f:"aadeshika talvana.pdf",k:["आदेशिका","talvana"]},
+  {n:"जन्म प्रमाण पत्र",f:"janm praman patra form.pdf",k:["जन्म","janam","birth"]},
+  {n:"नकल प्रतिवेदन",f:"nakal prativedan.pdf",k:["नकल","copy"]},
+  {n:"नामांतरण फॉर्म",f:"namantran form.pdf",k:["नामांतरण","mutation"]},
+  {n:"निवास प्रमाण पत्र",f:"nivas.pdf",k:["निवास","nivas","domicile"]},
+  {n:"पंचनामा प्रमाणिकरण",f:"panchnama pramanikaran.pdf",k:["पंचनामा","panchnama"]},
+  {n:"तालवाना फॉर्म",f:"talvana.pdf",k:["तालवाना","talvana"]},
+  {n:"विवाह पंजीयन फॉर्म",f:"vivahpanjiyan.pdf",k:["विवाह","shadi","marriage"]},
+  {n:"वृद्धा पेंशन",f:"bradha penstion.pdf",k:["वृद्धा","pension"]},
+  {n:"सिकमी",f:"sikmi sigmi.pdf",k:["सिकमी","sikmi"]},
+  {n:"सिजरा फॉर्म",f:"sijra.pdf",k:["सिजरा","sijra"]},
+  {n:"सीमांकन",f:"seemankan form.pdf",k:["सीमांकन","seemankan"]},
+  {n:"लिस्ट कागज",f:"list kagaj.pdf",k:["लिस्ट","list"]},
+  {n:"OBC जाति",f:"obc jati.pdf",k:["obc","jati","caste"]},
+  {n:"SC जाति",f:"sc jati pdf.pdf",k:["sc","jati","caste"]},
   {n:"all profarma",f:"All profarma(1).pdf",k:["sc","jati","caste"]},
   {n:"anugrah sahayata",f:"anugrah sahayata.pdf",k:["anugrah","anugrh","angrh"]},
   {n:"arthik sahayta",f:"arthik sahayta 20 hjar.pdf",k:["arthiksahayta","sahayata","arthik"]},
   {n:"fauti",f:"fauti form.pdf",k:["futi","fauti","foti"]},
   {n:"jamanat set",f:"jamanat set 0.pdf",k:["jamanat","jmanat","jmnt"]},
   {n:"ews certificate",f:"ews.pdf",k:["ews","ews","ews"]}
-];
+ ];
 
-const list=document.getElementById("formList");
-const input=document.getElementById("searchInput");
+ const list=document.getElementById("formList");
+ const input=document.getElementById("searchInput");
 
-function render(data){
- list.innerHTML="";
- if(!data.length){
-  list.innerHTML="<div class='form-item'>कोई फॉर्म नहीं मिला</div>";
-  return;
+ function render(data){
+  list.innerHTML="";
+  if(!data.length){
+   list.innerHTML="<div class='form-item'>कोई फॉर्म नहीं मिला</div>";
+   return;
+  }
+  data.forEach(x=>{
+   list.innerHTML+=`
+    <div class="form-item">
+      <div class="form-name">
+        <i class="bi bi-file-earmark-pdf-fill"></i>${x.n}
+      </div>
+      <div>
+        <a href="${x.f}" class="download-btn" download>Download</a>
+        <button class="print-btn" data-file="${x.f}">Print</button>
+      </div>
+    </div>`;
+  });
+
+  document.querySelectorAll('.print-btn').forEach(btn=>{
+   btn.addEventListener('click',()=>{
+     const pdfUrl = btn.getAttribute('data-file');
+     const printWindow = window.open(pdfUrl, "_blank");
+     printWindow.addEventListener('load', ()=>{
+       printWindow.focus();
+       printWindow.print();
+     });
+   });
+  });
  }
- data.forEach(x=>{
-  list.innerHTML+=`
-  <div class="form-item">
-    <div class="form-name">
-      <i class="bi bi-file-earmark-pdf-fill"></i>${x.n}
-    </div>
-    <a href="${x.f}" class="download-btn" download>Download</a>
-  </div>`;
+
+ input.addEventListener("input",()=>{
+  const t=input.value.toLowerCase().trim();
+  render(forms.filter(x=>
+   x.n.toLowerCase().includes(t) ||
+   x.k.some(k=>k.toLowerCase().includes(t))
+  ));
  });
-}
 
-input.addEventListener("input",()=>{
- const t=input.value.toLowerCase().trim();
- render(forms.filter(x=>
-  x.n.toLowerCase().includes(t) ||
-  x.k.some(k=>k.toLowerCase().includes(t))
- ));
-});
+ render(forms);
 
-render(forms);
+ /* IMAGE MODAL */
+ const profileImg=document.getElementById("profileImg");
+ const modal=document.getElementById("imgModal");
+ const modalImg=document.getElementById("modalImg");
+ const closeBtn=document.querySelector(".close-btn");
 
-/* IMAGE MODAL */
-const profileImg=document.getElementById("profileImg");
-const modal=document.getElementById("imgModal");
-const modalImg=document.getElementById("modalImg");
-const closeBtn=document.querySelector(".close-btn");
+ profileImg.onclick=()=>{
+  modal.style.display="flex";
+  modalImg.src=profileImg.src;
+ };
+ closeBtn.onclick=()=>modal.style.display="none";
+ modal.onclick=e=>{if(e.target===modal) modal.style.display="none";};
 
-profileImg.onclick=()=>{
- modal.style.display="flex";
- modalImg.src=profileImg.src;
-};
-closeBtn.onclick=()=>modal.style.display="none";
-modal.onclick=e=>{
- if(e.target===modal) modal.style.display="none";
-};
-
-document.getElementById("year").textContent=new Date().getFullYear();
+ document.getElementById("year").textContent=new Date().getFullYear();
 });
 </script>
 
